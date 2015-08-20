@@ -1,0 +1,19 @@
+module Full_Adder(A, B, Cin, Sum, Cout);
+    input A;
+    input B;
+    input Cin;
+    output Sum;
+    output Cout;
+    
+    //reg Sum;
+    //reg Cout;
+
+    wire y1, y2, y3;
+
+    xor x1(y1, A, B);
+    and x2(y2, y1, Cin);
+    xor x3(Sum, y1, Cin);
+    and x4(y3, A, B);
+    or x5(Cout, y2, y3);
+    
+endmodule
